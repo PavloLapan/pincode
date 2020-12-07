@@ -11,15 +11,11 @@ export default function pincode(state = initialState, action) {
     case actions.GENERATE_PIN: {
       return { ...state, pin: Array.from({length: 4}, () => Math.floor(Math.random() * 9)) }
     }
-    case actions.RESET: {
-      return initialState
-    }
     case actions.CHANGE_PIN: {
       const digit = parseInt(payload.value)
-
       return {
         ...state,
-        dotsGuessStatus: Object.assign([], state.dotsGuessStatus, {[payload.index]: digit === state.pin[payload.index]}),
+        dotsGuessStatus: Object.assign([], state.dotsGuessStatus, {[payload.index]: digit === state.pin[payload.index]})
       }
     }
     default:

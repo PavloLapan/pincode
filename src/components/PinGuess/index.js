@@ -5,7 +5,10 @@ import actions from 'constants/actions'
 import { connect } from 'react-redux'
 
 function PinGuess(props) {
+    // eslint-disable-next-line react/prop-types
   const { dispatch } = props
+    console.log(props)
+    // eslint-disable-next-line react/prop-types
   const { dotsGuessStatus, pin } = props.pincode
   useEffect(() => {
     dispatch({type: actions.GENERATE_PIN })
