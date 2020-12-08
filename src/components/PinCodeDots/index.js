@@ -6,6 +6,7 @@ function getDotColor(status) {
   return status ? 'white' : 'black'
 }
 export default function PinCodeDots(props) {
+    // eslint-disable-next-line react/prop-types
   const { dotsGuessStatus } = props
 
   return (
